@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content_stars {
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+.area_star {
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.area_star > div {
+    transition: transform .3s ease-out;
+}
+
+.area_star:hover > div {
+    transform: translate(0, -10px);
+}
+
+img {
+    grid-area: 2 / 1 / 2 /1;
+    align-self: center;
+    justify-self: center;
+}
+
+.boxe_stars {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+}
+
+.main_star {
+    height: 50px;
+}
+
+.background {
+    height: 47px;
+}
+
+.frontground {
+    height: 50px;
+    transform: scale(2px, 2px);
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+
+.background, .frontground {
+    visibility: hidden;
+}
+.area_star.active > div > .background {
+    visibility: visible;
+    animation-name: bganime;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+
+.area_star.active > div > .frontground {
+    animation-name: fganime;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes bganime {
+    0% {
+        visibility: hidden;
+    }
+    70% {
+        visibility: hidden;
+    }
+}
+
+@keyframes fganime {
+    0% {
+        visibility: visible;
+        transform: scale(0, 0);
+    }
+    70% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(0, 0);
+    }
+}
